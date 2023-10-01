@@ -1,0 +1,113 @@
+---
+title: "Tarea: Estudio de los Estadísticos de una Muestra"
+author: "Jesus Mudarra Luján"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+- \definecolor{shadecolor}{RGB}{235,235,235}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "",
+                      out.width = "70%",
+                      out.height = "70%",
+                      fig.align = "center")
+```
+
+## Enunciado
+
+**Responde a las siguientes preguntas, a partir de la muestra dada por las siguientes edades:**
+
+```{r}
+valores <- c(23,35,14,37,38,15,45,12,40,27,13,18,19,23,37,20,28,49,40,65,31,22,20,17,32)
+```
+
+## Pregunta 1
+
+**Obtén la suma de las edades y la edad promedio.**
+
+La suma de las edades se calcularía sumando todas las edades como se muestra a continuación:
+
+```{r}
+sum(valores)
+```
+
+La suma de las edades es de `r sum(valores)`.
+
+Para obtener la media debemos de dividir la suma de las edades por el número de datos (longitud del vector `valores`) que disponemos.
+
+```{r}
+n <- length(valores)
+media <- sum(valores)/n
+```
+
+La edad promedio es de `r sum(valores)/length(valores)` años.
+
+## Pregunta 2
+
+**Obtén la varianza y la desviación típica de las edades.**
+
+```{r}
+varianza <- sum((valores - media)^2)/(n-1)
+desv.tip <- sqrt(varianza)
+```
+
+La varianza de los datos es `r varianza` y la desviación típica `r desv.tip`
+
+## Pregunta 3
+
+**Calcula el coeficiente de variación.**
+
+```{r}
+cv <- media/desv.tip
+```
+
+El coeficiente de variación es de `r round(cv, 3)`.
+
+## Pregunta 4
+
+**Comprueba que se cumple la fórmula de Chebyshev y que el 68\% de tus datos caben entre $\mu$ - $\sigma$ y $\mu$ + $\sigma$.**
+
+```{r}
+media - desv.tip
+media + desv.tip
+```
+El 68 \% de las edades están comprendidas entre `r round(media - desv.tip, 3)` y `r round(media + desv.tip, 3)` años.
+
+## Pregunta 5
+
+**Calcula cual seria la edad mediana de la población.**
+
+```{r}
+sort(valores)
+```
+
+Ordenando los valores de menor a mayor nos percatamos que la mediana (valor del medio) es de `r median(valores)` años.
+
+## Pregunta 6
+
+**Calcula los valores estandarizados de cada una de las edades de los individuos y comprueba que su promedio es 0.**
+
+Mediante el siguiente bucle `for` calculamos el valor estandarizado de las observaciones: 
+
+```{r}
+z.score <- c()
+for (i in 1:length(valores)) {
+  z.score[i] <- (valores[i]-media)/desv.tip
+}
+```
+
+Comprobamos que la media es 0:
+
+```{r}
+mean(z.score)
+```
+
+Y que la desviación típica es 1:
+
+```{r}
+sd(z.score)
+```

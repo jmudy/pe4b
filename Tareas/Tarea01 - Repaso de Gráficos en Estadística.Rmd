@@ -1,0 +1,33 @@
+---
+title: "Tarea: Repaso de Gráficos en Estadística"
+author: "Jesus Mudarra Luján"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+- \definecolor{shadecolor}{RGB}{235,235,235}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "",
+                      out.width = "70%",
+                      out.height = "70%",
+                      fig.align = "center")
+```
+
+## Pregunta 1
+
+Describe gráficamente el tiempo (en minutos) que estos 20 estudiantes tardaron en finalizar su tarea en Udemy utilizando el gráfico adecuado:
+
+```{r}
+datos <- c(6.5, 5.8, 4.5, 6.2, 4.8, 7.3, 4.6, 3.9, 4.4, 5.5,
+           5.2, 6.7, 3.0, 2.4, 5.0, 3.6, 2.9, 4.0, 2.8, 3.6)
+```
+
+```{r}
+hist(datos)
+```
+
+
