@@ -1,0 +1,56 @@
+---
+title: "Tarea: Vamos a Practicar el Cálculo de Probabilidades"
+author: "Jesus Mudarra Luján"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+- \definecolor{shadecolor}{RGB}{235,235,235}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "",
+                      out.width = "70%",
+                      out.height = "70%",
+                      fig.align = "center")
+```
+
+## Enunciado
+
+Lee los tres ejercicios del video adjunto para practicar lo que hemos aprendido hasta el momento.
+
+## Pregunta 1
+
+¿De cuantas formas se pueden ordenar dos vocales diferentes?
+
+Aplicando la fórmula de permutación obtenemos:
+
+$$P^{n}_{x} = \frac{n!}{(n-x)!} = \frac{5!}{(5-2)!} = \frac{5!}{3!} = 20\ \text{formas de ordenar}$$
+
+## Pregunta 2
+
+¿Cuál es la probabilidad de no contratar ninguna mujer en el escenario número 2?
+
+En este caso, hay que calcular la probabilidad de que se asignen los 4 puestos de trabajo a 4 de los 5 hombres. La probabilidad de que se le asigne el primer puesto a un hombre es de $\frac{5}{8}$, puesto que son 5 hombres de los 8 candidatos. Una vez se le asigna el primer puesto de trabajo al primer hombre, la probabilidad de que el segundo puesto se le asigne a otro de los hombres restantes es de $\frac{4}{7}$. Y así sucesivamente hasta completar las 4 candidaturas. Por tanto, la probabilidad total se puede definir como:
+
+$$P(X = k) = P(X = 4) = \frac{5}{8} \cdot \frac{4}{7} \cdot \frac{3}{6} \cdot \frac{2}{5} = 0.0714 \approx 7.14\%$$
+
+Donde:
+
+* k: número de puestos de trabajos ocupados por hombres.
+
+## Pregunta 3
+
+Intenta deducir la fórmula general del escenario número 3
+
+La probabilidad de que suba o no suba las acciones del IBEX en un día concreto es de $\frac{1}{2}$. En el caso de dos días consecutivos sería de $\frac{1}{2} \cdot \frac{1}{2}$. Y finalmente, en el caso de 3 días $\frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2}$.
+
+Esta expresión se puede simplicar como:
+
+$$\text{Probabilidad} = \left(\frac{1}{2}\right)^{n}$$
+
+Donde:
+
+* n: es número de días consecutivos transcurridos.

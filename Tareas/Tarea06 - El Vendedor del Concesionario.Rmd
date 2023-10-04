@@ -1,0 +1,61 @@
+---
+title: "Tarea: El Vendedor del Concesionario"
+author: "Jesus Mudarra Luján"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+- \definecolor{shadecolor}{RGB}{235,235,235}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "",
+                      out.width = "70%",
+                      out.height = "70%",
+                      fig.align = "center")
+```
+
+## Enunciado
+
+**Lee el enunciado en el video adjunto para resolver el problema de analizar las ventas de un vendedor de coches.**
+
+## Pregunta 1
+
+\underline{Datos:}
+
+* $P(A)$ = 0.10; Probabilidad de comprar un coche
+* $P(\bar{A})$ = 0.90; Probabilidad de NO comprar un coche
+* $P(B|A)$ = 0.40; Probabilidad de habiendo comprado el coche aceptaron la cena gratis
+* $P(B|\bar{A})$ = 0.10; Probabilidad de NO habiendo comprado el coche aceptaron la cena gratis
+
+**En base al enunciado del video, ¿Las personas que aceptan la cena tienen mayor probabilidad de comprar el coche?**
+
+Nos preguntan por la probabilidad condicionada:
+
+$$P(A|B)$$
+
+Partiendo del teorema de Bayes:
+
+$$P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)} = \frac{P(A) \cdot P(B|A)}{P(A) \cdot P(B|A) + P(\bar{A}) \cdot P \left(B|\bar{A}\right)}$$
+
+$$P(B) = P(A) \cdot P(B|A) + P(\bar{A}) \cdot P \left(B|\bar{A}\right)$$
+
+Sustituyendo:
+
+$$P(B) = 0.10 \cdot 0.40 + 0.90 \cdot 0.10 = 0.13$$
+
+$$P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)} = \frac{0.10 \cdot 0.40}{0.13} = 0.3077 \approx 30.77\%$$
+
+## Pregunta 2
+
+**En base al enunciado del video, ¿Cuál es la probabilidad de que una persona que no acepta la cena termina comprando el coche?**
+
+Nos preguntan por la probabilidad condicionada:
+
+$$P(A|\bar{B})$$
+
+Partiendo del teorema de Bayes:
+
+$$P(A|\bar{B}) = \frac{P(A) \cdot P(\bar{B}|A)}{P(\bar{B})} = \frac{P(A) \cdot (1 - P(B|A))}{1 - P(B)} = \frac{0.10 \cdot (1-0.40)}{1-0.13} = 0.069 \approx 6.9\%$$

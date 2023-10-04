@@ -1,0 +1,70 @@
+---
+title: "Tarea: Problemas de Probabilidad"
+author: "Jesus Mudarra Luján"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+- \definecolor{shadecolor}{RGB}{235,235,235}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "",
+                      out.width = "70%",
+                      out.height = "70%",
+                      fig.align = "center")
+```
+
+## Ejercicio 1
+
+Una encuesta sobre los mejores destinos turísticos asiáticos mostró que, de 70 personas, 23 ubicaron a Singapur en primer lugar, mientras que 15 colocaron a Hong Kong en primer lugar, 11 colocaron a Shanghai en primer lugar, 7 colocaron a Beijing en primer lugar y el resto eligió Tokio. Sobre la base de estos datos, calcule lo siguiente.
+
+a) La probabilidad de que el destino preferido sea una ciudad de China. (En este caso específico, Hong Kong no se considera parte de China).
+
+b) La probabilidad de que el destino preferido no sea una ciudad china. (En este caso, Hong Kong se considera una ciudad china, incluso si está fuera de China).
+
+c) La probabilidad de que el destino preferido sea Tokio.
+
+d) La probabilidad de que el destino preferido no sea Singapur.
+
+## Ejercicio 2
+
+Una compañía de seguros estimó que el 30\% de todos los accidentes automovilísticos fueron causados en parte por las condiciones climáticas y que el 20\% de todos los accidentes automovilísticos involucraron lesiones corporales. Además, de los accidentes que involucraron lesiones corporales, el 40\% fueron causados en parte por las condiciones climáticas.
+
+a) ¿Cuál es la probabilidad de que un accidente elegido al azar haya sido causado en parte por las condiciones climáticas y haya involucrado lesiones corporales?
+
+b) ¿Son los eventos "causados en parte por las condiciones climáticas" y las "lesiones corporales involucradas" independientes?
+
+c) Si un accidente elegido al azar fue causado en parte por las condiciones climáticas, ¿cuál es la probabilidad de que haya involucrado lesiones corporales?
+
+d) ¿Cuál es la probabilidad de que un accidente elegido al azar no haya sido causado en parte por las condiciones climáticas y no haya involucrado lesiones corporales?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
